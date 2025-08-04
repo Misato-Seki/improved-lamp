@@ -1,103 +1,93 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import BedtimeIcon from '@mui/icons-material/Bedtime';
+import LightModeIcon from '@mui/icons-material/LightModeOutlined';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  return (
+    <div className={`min-h-screen transition-colors duration-300 ${
+      isDarkMode 
+        ? 'bg-[#1D1D1D] text-[#D3D3D3]' 
+        : 'bg-white text-[#828A95]'
+    }`}>
+      {/* Navigation Bar */}
+      <nav className="flex justify-end items-center gap-8 p-12">
+        {/* Mode Toggle */}
+        <button
+          onClick={toggleDarkMode}
+          className={`flex items-center gap-4 px-2 py-1 rounded-full border transition-colors duration-300 ${
+            isDarkMode 
+              ? 'border-[#D3D3D3] bg-[#1D1D1D]' 
+              : 'border-[#828A95] bg-white'
+          }`}
+        >
+          <div className="flex items-center gap-4">
+            {isDarkMode ? (
+              <>
+                <div className="w-4 h-4 rounded-full bg-[#D3D3D3] border border-[#D3D3D3]"></div>
+                <BedtimeIcon sx={{color: "#D3D3D3", fontSize: 15}}/>
+              </>
+            ) : (
+              <>
+                <LightModeIcon sx={{color: "#828A95", fontSize: 15}}/>
+                <div className="w-4 h-4 rounded-full bg-[#828A95] border border-[#828A95]"></div>
+              </>
+            )}
+          </div>
+        </button>
+
+        {/* Menu Button */}
+        <button className="w-8 h-8 flex items-center justify-center">
+          <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+            <path d="M0 0h20v2H0zM0 6h20v2H0zM0 12h20v2H0z" fill={isDarkMode ? "#D3D3D3" : "#828A95"}/>
+          </svg>
+        </button>
+      </nav>
+
+      {/* Main Content */}
+      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)] px-8">
+        <div className="max-w-2xl mx-auto text-left">
+          {/* Hero Text */}
+          <div className="mb-8">
+            <h1 className={`text-5xl font-normal mb-8 font-figtree ${
+              isDarkMode ? 'text-[#E2A0A0]' : 'text-[#E2A0A0]'
+            }`}>
+              Hello, I&apos;m Misato Seki.
+            </h1>
+            <p className="text-base leading-relaxed tracking-wide max-w-lg mx-auto font-abeezee">
+              Hi, I&apos;m a Japanese Full-Stack Developer based in Finland and 
+              passionate about front-end development and currently studying 
+              software development. I&apos;m looking for opportunities to grow and 
+              contribute in Finland&apos;s tech scene.
+            </p>
+          </div>
+
+          {/* Action Links */}
+          <div className="flex flex-col sm:flex-row gap-8 items-center">
+            <a
+              href="#projects"
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity font-abeezee"
+            >
+              <span>See My Project</span>
+              <span>→</span>
+            </a>
+            <a
+              href="#about"
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity font-abeezee"
+            >
+              <span>More About Me</span>
+              <span>→</span>
+            </a>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
