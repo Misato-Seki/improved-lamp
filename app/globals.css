@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
+/* Not Dark Mode */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #828A95;
   --font-figtree: var(--font-figtree);
   --font-abeezee: var(--font-abeezee);
 }
@@ -14,6 +15,7 @@
   --font-abeezee: var(--font-abeezee);
 }
 
+/* Dark Mode: OSに従った切り替え */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -25,6 +27,10 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
+main {
+  padding-top: 100px;
 }
 
 /* Custom styles for the portfolio */
