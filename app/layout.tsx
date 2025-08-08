@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Figtree, ABeeZee } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/NavBar";
+import { DarkModeProvider } from "@/components/DarkModeContext";
 
 const figtree = Figtree({
   variable: "--font-figtree",
@@ -14,7 +16,7 @@ const abeeZee = ABeeZee({
 });
 
 export const metadata: Metadata = {
-  title: "Misato Seki - Portfolio",
+  title: "Misato Seki",
   description: "Japanese Full-Stack Developer based in Finland",
 };
 
@@ -25,10 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${figtree.variable} ${abeeZee.variable} antialiased`}
-      >
-        {children}
+      <body className={`${figtree.variable} ${abeeZee.variable} antialiased`}>
+        <DarkModeProvider>
+          <NavBar />
+          {children}
+        </DarkModeProvider>
       </body>
     </html>
   );
