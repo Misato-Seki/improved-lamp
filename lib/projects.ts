@@ -17,7 +17,7 @@ export const ProjectData: Project[] = [
         ],
         github: "https://github.com/Misato-Seki/task-management-bot",
         demo: "https://taskbot.misatosan.com/",
-        image: ""
+        image: "/images/TaskBot.png"
 
     },
     {
@@ -31,11 +31,11 @@ export const ProjectData: Project[] = [
         ],
         github: "https://github.com/axdra/VFM",
         demo: "https://main.d2oybo1hujadwl.amplifyapp.com/",
-        image: ""
+        image: "/images/VFM.png"
     },
     {
         id: 3,
-        title: "Centria Hub",
+        title: "Uniqore",
         description: "Uniqore is a centralized digital platform designed to integrate and simplify access to university resources including news, events, articles, and internal announcements. It enhances communication, collaboration, and engagement across students, staff, and faculty in universities.",
         tags: [
             "React",
@@ -45,7 +45,7 @@ export const ProjectData: Project[] = [
         ],
         github: "https://github.com/Centria-Hub/centria-hub",
         demo: "https://hub.solo-web.studio/",
-        image: ""
+        image: "/images/Uniqore.png"
     },
     {
         id: 4,
