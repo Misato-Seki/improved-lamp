@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 export default function Home() {
   return (
@@ -12,10 +12,10 @@ export default function Home() {
               Hello, I&apos;m Misato Seki.
             </h1>
             <p className="text-base leading-relaxed tracking-wide max-w-lg mx-auto font-abeezee">
-              Hi, I&apos;m a Japanese Full-Stack Developer based in Finland and 
-              passionate about front-end development and currently studying 
-              software development. I&apos;m looking for opportunities to grow and 
-              contribute in Finland&apos;s tech scene.
+              Hi, I&apos;m a Japanese Full-Stack Developer based in Finland and
+              passionate about front-end development and currently studying
+              software development. I&apos;m looking for opportunities to grow
+              and contribute in Finland&apos;s tech scene.
             </p>
           </div>
 
@@ -39,5 +39,5 @@ export default function Home() {
         </div>
       </main>
     </div>
-  );
+  )
 }
