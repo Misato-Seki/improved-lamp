@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={`${figtree.variable} ${abeeZee.variable} antialiased`}>
         <DarkModeProvider>
           <NavBar />
-          {children}
+          <div className="h-dvh pt-[104px]">{children}</div>
         </DarkModeProvider>
       </body>
     </html>

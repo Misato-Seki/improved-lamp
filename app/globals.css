@@ -151,3 +151,13 @@ main {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+@media (min-height: 800px) {
+  .custom-pt-40 {
+    padding-top: 8rem;
+  }
+  .custom-items-start {
+    align-items: flex-start;
+    padding-top: 3rem;
+  }
+}
