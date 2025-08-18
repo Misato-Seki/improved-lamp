@@ -32,11 +32,13 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-end items-center gap-4 sm:px-16 px-8 py-9">
+      <nav
+        className={`fixed top-0 right-0 left-0 z-50 flex items-center justify-end gap-4 px-8 py-9 sm:px-16 ${isDarkMode ? 'bg-[#1D1D1D]' : 'bg-white'}`}
+      >
         {/* Mode Toggle */}
         <button
           onClick={toggleDarkMode}
-          className={`flex items-center gap-4 px-2 py-1 rounded-full border transition-colors duration-300 ${
+          className={`flex items-center gap-4 rounded-full border px-2 py-1 transition-colors duration-300 ${
             isDarkMode
               ? 'border-[#D3D3D3] bg-[#1D1D1D]'
               : 'border-[#828A95] bg-white'
@@ -45,13 +47,13 @@ export default function NavBar() {
           <div className="flex items-center gap-4">
             {isDarkMode ? (
               <>
-                <div className="w-4 h-4 rounded-full bg-[#D3D3D3] border border-[#D3D3D3]"></div>
+                <div className="h-4 w-4 rounded-full border border-[#D3D3D3] bg-[#D3D3D3]"></div>
                 <BedtimeIcon sx={{ color: '#D3D3D3', fontSize: 15 }} />
               </>
             ) : (
               <>
                 <LightModeIcon sx={{ color: '#828A95', fontSize: 15 }} />
-                <div className="w-4 h-4 rounded-full bg-[#828A95] border border-[#828A95]"></div>
+                <div className="h-4 w-4 rounded-full border border-[#828A95] bg-[#828A95]"></div>
               </>
             )}
           </div>
@@ -59,7 +61,7 @@ export default function NavBar() {
 
         {/* Menu Button */}
         <button
-          className="w-8 h-8 flex items-center justify-center"
+          className="flex h-8 w-8 items-center justify-center"
           onClick={toggleMenu}
         >
           <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
