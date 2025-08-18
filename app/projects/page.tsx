@@ -175,7 +175,7 @@ export default function Projects() {
                     {data.description}
                   </p>
                   {/* Tags */}
-                  <div className="mt-1 flex flex-wrap items-center gap-3">
+                  <div className="mt-1 flex w-full flex-wrap items-center gap-3">
                     {data.tags.map((tag) => (
                       <span
                         key={tag}

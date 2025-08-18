@@ -48,36 +48,6 @@ export const ProjectData: Project[] = [
     tags: ['React', 'Next.js', 'TypeScript', 'TailwindCSS', 'Vercel'],
     github: 'https://github.com/Misato-Seki/improved-lamp',
     demo: 'https://portfolio.misatosan.com/',
-    image: '/images/Uniqore.png',
-  },
-  {
-    id: 5,
-    title: 'SkipperDigit',
-    description:
-      'Uniqore is a centralized digital platform designed to integrate and simplify access to university resources including news, events, articles, and internal announcements. It enhances communication, collaboration, and engagement across students, staff, and faculty in universities.',
-    tags: ['React', 'Next.js', 'TypeScript', 'TailwindCSS'],
-    github: 'https://github.com/Centria-Hub/centria-hub',
-    demo: 'https://hub.solo-web.studio/',
-    image: '/images/Uniqore.png',
-  },
-  {
-    id: 6,
-    title: 'Mobile Flash Card',
-    description:
-      'Uniqore is a centralized digital platform designed to integrate and simplify access to university resources including news, events, articles, and internal announcements. It enhances communication, collaboration, and engagement across students, staff, and faculty in universities.',
-    tags: ['React', 'Next.js', 'TypeScript', 'TailwindCSS'],
-    github: 'https://github.com/Centria-Hub/centria-hub',
-    demo: 'https://hub.solo-web.studio/',
-    image: '/images/Uniqore.png',
-  },
-  {
-    id: 7,
-    title: 'Sample',
-    description:
-      'Uniqore is a centralized digital platform designed to integrate and simplify access to university resources including news, events, articles, and internal announcements. It enhances communication, collaboration, and engagement across students, staff, and faculty in universities.',
-    tags: ['React', 'Next.js', 'TypeScript', 'TailwindCSS'],
-    github: 'https://github.com/Centria-Hub/centria-hub',
-    demo: 'https://hub.solo-web.studio/',
-    image: '/images/Uniqore.png',
+    image: '/images/MisatoSeki.png',
   },
 ]
