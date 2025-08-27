@@ -25,7 +25,7 @@ beforeAll(() => {
   })
 })
 
-describe('modeToggle', () => {
+describe('Mode Toggle Test', () => {
   it('initially light mode when OS is light', () => {
     window.matchMedia = jest.fn().mockImplementation((query) => ({
       matches: false,

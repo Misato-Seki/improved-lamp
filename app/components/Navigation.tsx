@@ -44,6 +44,7 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
 
   return (
     <div
+      data-testid="navigation-menu"
       className={`fixed top-[100px] right-0 z-50 h-full w-full transform transition-transform duration-300 ease-in-out ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       } ${isDarkMode ? 'bg-[#1D1D1D]' : 'bg-white'}`}
