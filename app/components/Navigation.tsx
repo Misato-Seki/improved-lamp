@@ -44,17 +44,19 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
 
   return (
     <div
-      className={`fixed top-[100px] right-0 h-full w-full z-50 transform transition-transform duration-300 ease-in-out ${
+      data-testid="navigation-menu"
+      className={`fixed top-[100px] right-0 z-50 h-full w-full transform transition-transform duration-300 ease-in-out ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       } ${isDarkMode ? 'bg-[#1D1D1D]' : 'bg-white'}`}
     >
       {/* Main Navigation Frame */}
-      <div className="flex flex-col gap-8 max-w-2xl mx-auto mt-20 md:mt-32 px-3">
+      <div className="mx-auto mt-20 flex max-w-2xl flex-col gap-8 px-3 md:mt-32">
         {/* Navigation Items */}
         {navigationItems.map((item) => (
           <div
             key={item.id}
-            className="flex items-center cursor-pointer group overflow-hidden"
+            data-testid={item.id}
+            className="group flex cursor-pointer items-center overflow-hidden"
             onClick={() => {
               onClose()
               router.push(item.href)
@@ -63,23 +65,23 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
             <span
               className={`${
                 item.href === pathname
-                  ? `text-5xl md:text-7xl leading-[1.2] font-figtree ${
+                  ? `font-figtree text-5xl leading-[1.2] md:text-7xl ${
                       item.id === 'HOME'
                         ? 'text-[#E2A0A0]'
                         : item.id === 'PROJECTS'
-                        ? 'text-[#A0CDE2]'
-                        : item.id === 'EXPERIENCE'
-                        ? 'text-[#A0A2E2]'
-                        : ''
+                          ? 'text-[#A0CDE2]'
+                          : item.id === 'EXPERIENCE'
+                            ? 'text-[#A0A2E2]'
+                            : ''
                     }`
-                  : `text-5xl md:text-7xl leading-[1.2] font-figtree transition-all duration-500 ease-out transform translate-x-[-100%] group-hover:translate-x-0 ${
+                  : `font-figtree translate-x-[-100%] transform text-5xl leading-[1.2] transition-all duration-500 ease-out group-hover:translate-x-0 md:text-7xl ${
                       item.id === 'HOME'
                         ? 'text-[#E2A0A0]'
                         : item.id === 'PROJECTS'
-                        ? 'text-[#A0CDE2]'
-                        : item.id === 'EXPERIENCE'
-                        ? 'text-[#A0A2E2]'
-                        : ''
+                          ? 'text-[#A0CDE2]'
+                          : item.id === 'EXPERIENCE'
+                            ? 'text-[#A0A2E2]'
+                            : ''
                     }`
               }`}
             >
@@ -88,8 +90,8 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
             <span
               className={`${
                 item.href === pathname
-                  ? 'text-5xl md:text-7xl leading-[1.2] font-figtree'
-                  : `text-5xl md:text-7xl leading-[1.2] font-figtree transition-all duration-500 ease-out transform -translate-x-10 md:-translate-x-20 group-hover:translate-x-4 ${
+                  ? 'font-figtree text-5xl leading-[1.2] md:text-7xl'
+                  : `font-figtree -translate-x-10 transform text-5xl leading-[1.2] transition-all duration-500 ease-out group-hover:translate-x-4 md:-translate-x-20 md:text-7xl ${
                       isDarkMode ? 'text-[#D3D3D3]' : 'text-[#828A95]'
                     }`
               }`}
@@ -107,7 +109,7 @@ export default function Navigation({ isOpen, onClose }: NavigationProps) {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[50px] h-[50px] flex items-center justify-center transition-colors duration-300 hover:opacity-80"
+              className="flex h-[50px] w-[50px] items-center justify-center transition-colors duration-300 hover:opacity-80"
             >
               {link.icon}
             </a>

@@ -45,7 +45,16 @@ export const ProjectData: Project[] = [
     title: 'Misato Seki',
     description:
       'This is my portfolio website, which showcases my development projects and experience. It highlights the skills I have acquired and the work I am most proud of. Feel free to explore and learn more about what I can offer.',
-    tags: ['React', 'Next.js', 'TypeScript', 'TailwindCSS', 'Vercel'],
+    tags: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'TailwindCSS',
+      'Vercel',
+      'Jest',
+      'Cypress',
+      'React Testing Library',
+    ],
     github: 'https://github.com/Misato-Seki/improved-lamp',
     demo: 'https://portfolio.misatosan.com/',
     image: '/images/MisatoSeki.png',

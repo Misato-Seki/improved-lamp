@@ -37,6 +37,7 @@ export default function NavBar() {
       >
         {/* Mode Toggle */}
         <button
+          data-testid="mode-toggle"
           onClick={toggleDarkMode}
           className={`flex items-center gap-4 rounded-full border px-2 py-1 transition-colors duration-300 ${
             isDarkMode
@@ -61,6 +62,7 @@ export default function NavBar() {
 
         {/* Menu Button */}
         <button
+          data-testid="menu-button"
           className="flex h-8 w-8 items-center justify-center"
           onClick={toggleMenu}
         >
