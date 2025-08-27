@@ -141,7 +141,6 @@ export default function Projects() {
                 </AccordionTrigger>
                 <AccordionContent className="flex flex-col items-center">
                   {/* Image */}
-                  {/* <div className="p-5"></div> */}
                   <div
                     className={`h-[300px] w-full max-w-[300px] cursor-pointer rounded-[30px] ${isDarkMode ? 'shadow-[0_10px_10px_0px_rgba(255,255,255,0.25)]' : 'shadow-[0_10px_10px_0px_rgba(0,0,0,0.25)]'}`}
                   >
