@@ -13,14 +13,17 @@ import Image from 'next/image'
 import { useDarkMode } from '@/components/DarkModeContext'
 
 export default function Experience() {
+  const latest = ExperienceData.length
   const [selectedExperience, setSelectedExperience] = useState<string | null>(
-    '1'
+    latest ? latest.toString() : null
   )
   const handleExperienceSelect = (event: React.MouseEvent<HTMLDivElement>) => {
     const tartget = event.currentTarget as HTMLDivElement
     setSelectedExperience(tartget.id)
   }
   const { isDarkMode } = useDarkMode()
+
+  console.log('latest', latest)
 
   return (
     <>
@@ -35,7 +38,16 @@ export default function Experience() {
             Experience
           </h1>
           <div className="hide-scrollbar h-full overflow-y-auto">
-            <Accordion type="single" collapsible className="mb-10 w-full">
+            <Accordion
+              type="single"
+              collapsible
+              className="mb-10 w-full"
+              value={
+                ExperienceData.find(
+                  (data) => data.id.toString() === selectedExperience
+                )?.position
+              }
+            >
               {ExperienceData.toReversed().map((data) => (
                 <AccordionItem
                   value={data.position}
@@ -114,7 +126,14 @@ export default function Experience() {
           Experience
         </h1>
         <div className="hide-scrollbar h-full w-full overflow-y-auto">
-          <Accordion type="single" collapsible className="mb-10 w-full">
+          <Accordion
+            type="single"
+            collapsible
+            className="mb-10 w-full"
+            defaultValue={
+              ExperienceData.find((data) => data.id === latest)?.position
+            }
+          >
             {ExperienceData.toReversed().map((data) => (
               <AccordionItem
                 value={data.position}

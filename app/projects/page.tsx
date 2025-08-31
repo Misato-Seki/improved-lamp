@@ -140,6 +140,7 @@ export default function Projects() {
                   {data.title}
                 </AccordionTrigger>
                 <AccordionContent className="flex flex-col items-center">
+                  <div className="h-5" />
                   {/* Image */}
                   <div
                     className={`h-[300px] w-full max-w-[300px] cursor-pointer rounded-[30px] ${isDarkMode ? 'shadow-[0_10px_10px_0px_rgba(255,255,255,0.25)]' : 'shadow-[0_10px_10px_0px_rgba(0,0,0,0.25)]'}`}
@@ -162,7 +163,7 @@ export default function Projects() {
                         width={1280}
                         height={832}
                         alt="Picture of the project"
-                        className="h-full w-full rounded-[30px] object-cover grayscale transition-all duration-300 hover:scale-110 hover:grayscale-0"
+                        className="h-full w-full rounded-[30px] object-cover grayscale transition-all duration-300 hover:scale-105 hover:grayscale-0"
                       />
                     </a>
                   </div>
