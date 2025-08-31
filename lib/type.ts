@@ -7,3 +7,12 @@ export type Project = {
   demo?: string
   image?: string
 }
+
+export type Experience = {
+  id: number
+  position: string
+  company: string
+  period: string
+  image?: string
+  link?: string
+}
