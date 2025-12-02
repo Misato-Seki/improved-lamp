@@ -2,8 +2,8 @@ import { Experience } from './type'
 export const ExperienceData: Experience[] = [
   {
     id: 1,
-    position: 'Nara Women\'s University',
-    company: 'Bachelor\'s degree, Human Life and Environment (Architecture)',
+    position: 'Nara Womens University',
+    company: 'Bachelors degree, Human Life and Environment (Architecture)',
     period: 'Apr 2012 - Mar 2016',
     image: '/images/NoImage.png',
     link: 'https://www.nara-wu.ac.jp/',
@@ -36,7 +36,7 @@ export const ExperienceData: Experience[] = [
     id: 5,
     position: 'Full Stack Engineer',
     company: 'SkipperDigit / Internship',
-    period: 'July 2025 - Present',
+    period: 'July 2025 - Nov 2025',
     image: '/images/SkipperDigit.jpeg',
     link: 'https://www.skipperdigit.com/',
   },

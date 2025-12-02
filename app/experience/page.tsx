@@ -23,8 +23,6 @@ export default function Experience() {
   }
   const { isDarkMode } = useDarkMode()
 
-  console.log('latest', latest)
-
   return (
     <>
       {/* Desktop (lg~) */}

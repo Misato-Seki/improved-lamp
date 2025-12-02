@@ -35,7 +35,7 @@ export default function Projects() {
           </h1>
           <div className="hide-scrollbar h-full overflow-y-auto">
             <Accordion type="single" collapsible className="mb-10 w-full">
-              {ProjectData.map((data) => (
+              {ProjectData.toReversed().map((data) => (
                 <AccordionItem
                   value={data.title}
                   key={data.id}
